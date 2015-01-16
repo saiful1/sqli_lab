@@ -46,12 +46,12 @@ if(isset($_POST['submit'])) {
 	$sql="
 		CREATE TABLE IF NOT EXISTS `users` (
 		`id` int(11) NOT NULL,
-		  `first_name` varchar(20) NOT NULL,
-		  `last_name` varchar(20) NOT NULL,
+		  `first_name` varchar(30) NOT NULL,
+		  `last_name` varchar(30) NOT NULL,
 		  `username` varchar(30) NOT NULL,
-		  `password` varchar(30) NOT NULL,
-		  `email` varchar(30) NOT NULL
-		) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5;
+		  `password` varchar(100) NOT NULL,
+		  `email` varchar(50) NOT NULL
+		) ENGINE=InnoDB  DEFAULT CHARSET=gbk AUTO_INCREMENT=4 ;
 	";
 	if (mysql_query($sql)) {
 		echo "[+]..................Creating Table <b><i> users </i></b><br>";
@@ -91,11 +91,35 @@ if(isset($_POST['submit'])) {
 		INSERT INTO `users` (`id`, `first_name`, `last_name`, `username`, `password`, `email`) VALUES
 		(1, 'Admin', 'Admin', 'admin', 'admin123', 'admin@admin.com'),
 		(2, 'Ananta', 'Jalil', 'ananta', 'ananta123', 'ananta@ananta.com'),
-		(3, 'Shakib', 'Khan', 'shakib', 'shakib123', 'shakib@shakib.com')
+		(3, 'Shakib', 'Khan', 'shakib', 'shakib123', 'shakib@shakib.com');
 	";
 	if (mysql_query($sql)) {
 		echo "[+]..................Inserting Data into <b><i> users </i></b> table <br>";
 	} else {
 		echo "[-]..................Error While Inserting Data into <b><i> users </i></b> table - ", mysql_error(), "<br>";
+	}
+
+	//indexes for table users
+	$sql="
+		ALTER TABLE `users`
+	 	 ADD PRIMARY KEY (`id`);
+	 ";
+
+	if (mysql_query($sql)) {
+		echo "[+]..................Indexing for <b><i> users </i></b> table <br>";
+	} else {
+		echo "[-]..................Error While Indexing for <b><i> users </i></b> table - ", mysql_error(), "<br>";
+	}
+
+	//AUTO_INCREMENT for table users
+	$sql="
+		ALTER TABLE `users`
+		MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+	 ";
+
+	if (mysql_query($sql)) {
+		echo "[+]..................Setting AUTO_INCREMENT for <b><i> users </i></b> table <br>";
+	} else {
+		echo "[-]..................Error While Setting AUTO_INCREMENT for <b><i> users </i></b> table - ", mysql_error(), "<br>";
 	}
 }
