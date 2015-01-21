@@ -21,10 +21,9 @@
 					$row 	= mysql_fetch_array($result);
 
 					if($row) {
-					  	echo '<font color= "#0000ff">Logged in<br></font>';
-				  	} else {
-					  	echo '<font color= "#0000ff">Logged in<br></font>';
-					}
+					  	echo '<font color= "#0000ff">';
+					  	echo  "Logged in<br></font>";
+				  	}
 				} else {
 					echo "<h4> Input the ID as parameter with numeric value </h4>";
 				}
