@@ -7,7 +7,7 @@
 <body>
 	<center>
 		<h1>Welcome! 1337</h1><hr>
-		<h3>Hint: Post SQL Injection Error Based</h3><br>
+		<h3>Hint: Post SQL Injection - Error Based</h3><br>
 			<div align="center" style="margin:0 auto; background-color:#E8E8E8; border:1px solid #666; text-align:center; width:350px; height:130px; font-family:'Trebuchet MS', Arial, Helvetica, sans-serif;">
 				<div style="padding-top:10px; font-size:15px;">
 					<form action="" method="post">
