@@ -21,7 +21,7 @@
 					$row 	= mysql_fetch_array($result);
 
 					if($row) {
-					  	echo '<font color= "#0000ff">Logged in... Use Outfile Command<br></font>';
+					  	echo '<font color= "#0000ff">Logged in<br></font>';
 				  	} else {
 					  	echo '<font color= "#0000ff">You have an error in your SQL syntax<br></font>';
 					}
