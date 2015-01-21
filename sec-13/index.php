@@ -31,8 +31,8 @@
 				if(isset($_POST['submit'])) {
 					$user = $_POST['user'];
 					$pass = $_POST['pass'];
-					$user = '"'.$user."'";
-					$pass = '"'.$pass."'";
+					$user = '"'.$user.'"';
+					$pass = '"'.$pass.'"';
 
 					$sql 	= "SELECT username, password, email FROM users WHERE username = $user AND password = $pass LIMIT 0,1";
 					$result = mysql_query($sql);
