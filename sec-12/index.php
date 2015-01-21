@@ -34,9 +34,9 @@
 
 					$sql 	= "SELECT username, password, email FROM users WHERE username = '$user' AND password = '$pass' LIMIT 0,1";
 					$result = mysql_query($sql);
-					$row 	= mysql_fetch_array($result);
-					$result = mysql_num_rows($row);
-					if($result > 0) {
+					
+					if(mysql_num_rows($result) > 0) {
+						$row = mysql_fetch_array($result);
 					  	echo '<br>Your E-Mail : ', $row['email'], '<br><br> <img src="../images/ok.png" >';
 				  	} else {
 					  	echo print_r(mysql_error(), true), '<br> <img src="../images/error.png">';
