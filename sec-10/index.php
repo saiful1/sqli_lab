@@ -7,7 +7,7 @@
 <body>
 	<center>
 		<h1>Welcome! 1337</h1><hr>
-		<h3>Hint: Time Based Blind SQL Injection</h3><br>
+		<h3>Hint: Blind SQL Injection</h3><br>
 			<?php
 				set_time_limit(0);
 				error_reporting(0);
@@ -16,7 +16,7 @@
 				if(isset($_GET['id'])) {
 					$id = $_GET['id'];
 
-					$sql 	= "SELECT * FROM users WHERE id = '$id' LIMIT 0,1";
+					$sql 	= "SELECT * FROM users WHERE id = $id LIMIT 0,1";
 					$result = mysql_query($sql);
 					$row 	= mysql_fetch_array($result);
 
