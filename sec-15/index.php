@@ -7,7 +7,7 @@
 <body>
 	<center>
 		<h1>Welcome! 1337</h1><hr>
-		<h3>Hint: Post SQL Injection - Blind Based</h3><br>
+		<h3>Hint: Blind Post SQL Injection</h3><br>
 			<div align="center" style="margin:0 auto; background-color:#E8E8E8; border:1px solid #666; text-align:center; width:350px; height:130px; font-family:'Trebuchet MS', Arial, Helvetica, sans-serif;">
 				<div style="padding-top:10px; font-size:15px;">
 					<form action="" method="post">
@@ -36,9 +36,9 @@
 
 					$sql 	= "SELECT username, password, email FROM users WHERE username = ($user) AND password = ($pass) LIMIT 0,1";
 					$result = mysql_query($sql);
-					$row 	= mysql_fetch_array($result);
 
-					if($row) {
+					if(mysql_num_rows($result) > 0) {
+						$row = mysql_fetch_array($result);
 					  	echo '<br><br> <img src="../images/ok.png" >';
 				  	} else {
 					  	echo '<br> <img src="../images/error.png">';
