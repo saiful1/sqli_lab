@@ -32,29 +32,33 @@
 					$user = $_POST['user'];
 					$pass = $_POST['pass'];
 
-					$sql 	= "SELECT username, password, email FROM users WHERE username=$user LIMIT 0,1";
-					$result = mysql_query($sql);
-					$row 	= mysql_fetch_array($result);
+					$sql="SELECT username, password FROM users WHERE username= '$user' LIMIT 0,1";
 
-					if($row) {
-					  	$row1 = $row['username'];  	
-
+					$result=mysql_query($sql);
+					$row = mysql_fetch_array($result);
+					
+					if($row)
+					{
+						$row1 = $row['username'];  	
 						$update="UPDATE users SET password = '$pass' WHERE username='$row1'";
 						mysql_query($update);
 				  		echo "<br>";
-				  		echo '<img src="../images/ok.png"';
-
-						if (mysql_error()) {
-							echo '<font color= "#900" font size = 3>', print_r(mysql_error(), true), "</br></br></font>";
-						} else {
-							echo '<font color= "#900" font size = 3 ><br></fonr?';
-						}
 					
-						echo '</font>';
-
-				  	} else {
-						echo '<font size="4.5" color="#900"><br>', '<img src="../images/error.png"> </font>';
-					}
+						if (mysql_error()) {
+							echo '<font color= "#900" font size = 3 >';
+							print_r(mysql_error());
+							echo "</br></br>";
+							echo "</font>";
+						} else {
+							echo '<font color= "#900" font size = 3 >';
+							echo "<br>";
+							echo "</font>";
+						}
+						echo '<img src="../images/ok.png"></font>';
+				  		} else {
+							echo '<font size="4.5" color="#900"></br>';
+							echo '<img src="../images/error.png"></font>';
+						}
 				}
 			?>
 		<p>For More Info Visit <a href="http://ubhteam.org" target="_blank">UBH Team</a></p>
