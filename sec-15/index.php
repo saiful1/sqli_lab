@@ -40,9 +40,7 @@
 					if(mysql_num_rows($result) > 0) {
 						$row = mysql_fetch_array($result);
 					  	echo '<br><br> <img src="../images/ok.png" >';
-				  	} else {
-					  	echo '<br> <img src="../images/error.png">';
-					}
+				  	}
 				}
 			?>
 		<p>For More Info Visit <a href="http://ubhteam.org" target="_blank">UBH Team</a></p>
