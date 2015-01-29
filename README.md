@@ -28,7 +28,6 @@ sqli_lab
   <li>Post SQL Injection.
   	<ol>
   		<li>Error Based</li>
-  		<li>Blind - Time Based</li>
   	</ol>
   </li>
   
